@@ -10,6 +10,7 @@
           <field name="prenom"/>
           <field name="secteur"/>
           <field name="chambre"/>
+          <field name="promotion"/>
         </tree>
       </field>
     </record>

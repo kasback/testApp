@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="cardiologieb.note">
+      <field name="name">Notes</field>
+      <field name="model">cardiologieb.note</field>
+      <field name="arch" type="xml">
+          <tree>
+                <field name="stat"/>
+                <field name="resident"/>
+                <field name="note_resident"/>
+          </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cardiologieb.action_note">
+      <field name="name">Notes</field>
+      <field name="res_model">cardiologieb.note</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>
