@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cardiologieb_resident,cardiologieb.resident,model_cardiologieb_resident,,1,1,1,1
+access_cardiologieb_secteur,cardiologieb.secteur,model_cardiologieb_secteur,,1,1,1,1
+access_cardiologieb_chambre,cardiologieb.chambre,model_cardiologieb_chambre,,1,1,1,1
+access_cardiologieb_garde,cardiologieb.garde,model_cardiologieb_garde,,1,1,1,1

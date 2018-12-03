@@ -1,0 +1,31 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="cardiologieb.list">
+      <field name="name">Résidents</field>
+      <field name="model">cardiologieb.resident</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nom"/>
+          <field name="prenom"/>
+          <field name="secteur"/>
+          <field name="chambre"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cardiologieb.action_window">
+      <field name="name">Résidents</field>
+      <field name="res_model">cardiologieb.resident</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="cardiologieb" id="cardiologieb.menu_root"/>
+        <menuitem name="Résidents" id="cardiologieb.menu_1" parent="cardiologieb.menu_root"
+              action="cardiologieb.action_window"/>
+        <menuitem name="Secteurs" id="cardiologieb.menu_2" parent="cardiologieb.menu_root" action="cardiologieb.action_secteur"/>
+        <menuitem name="Chambres" id="cardiologieb.menu_3" parent="cardiologieb.menu_root" action="cardiologieb.action_chambre"/>
+        <menuitem name="Gardes" id="cardiologieb.menu_4" parent="cardiologieb.menu_root" action="cardiologieb.action_garde"/>
+
+  </data>
+</odoo>

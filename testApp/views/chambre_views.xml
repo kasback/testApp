@@ -1,0 +1,22 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="cardiologieb.chambre">
+      <field name="name">Chambres</field>
+      <field name="model">cardiologieb.chambre</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nom"/>
+          <field name="secteur_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cardiologieb.action_chambre">
+      <field name="name">Chambres</field>
+      <field name="res_model">cardiologieb.chambre</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>
