@@ -44,7 +44,6 @@ class Chambre(models.Model):
 
 class Garde(models.Model):
     _name = 'cardiologieb.garde'
-    _rec_name = 'nom'
 
     date_garde = fields.Date()
     resident = fields.Many2one('cardiologieb.resident')

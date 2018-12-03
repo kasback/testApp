@@ -6,7 +6,6 @@
       <field name="model">cardiologieb.garde</field>
       <field name="arch" type="xml">
           <tree>
-                <field name="nom"/>
                 <field name="date_garde"/>
                 <field name="resident"/>
           </tree>
