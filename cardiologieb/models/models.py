@@ -15,7 +15,7 @@ class Resident(models.Model):
     prenom = fields.Char()
     secteur = fields.Many2one('cardiologieb.secteur')
     chambre = fields.Many2one('cardiologieb.chambre')
-    gardes = fields.One2many('cardiologieb.garde','resident')
+    #gardes = fields.One2many('cardiologieb.garde','resident')
     stats = fields.One2many('cardiologieb.stat','resident')
 
     def _secteur_onchange(self):
@@ -42,9 +42,8 @@ class Chambre(models.Model):
 class Garde(models.Model):
     _name = 'cardiologieb.garde'
 
-    today = Date.today()
     nom = fields.Char()
-    date_garde = fields.Date(today)
+    #date_garde = fields.Date()
     resident = fields.Many2one('cardiologieb.resident')
 
 
