@@ -29,6 +29,7 @@
         'views/chambre_views.xml',
         'views/garde_views.xml',
         'views/stat_views.xml',
+        'views/note_views.xml',
         'views/resident_views.xml',
         'views/templates.xml',
     ],

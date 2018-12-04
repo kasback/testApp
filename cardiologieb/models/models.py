@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields
-from odoo.fields import Date
 
 
 class Cardiologieb(models.Model):
@@ -10,13 +9,15 @@ class Cardiologieb(models.Model):
 
 class Resident(models.Model):
     _name = 'cardiologieb.resident'
+    _rec_name = 'nom'
 
     nom = fields.Char()
     prenom = fields.Char()
     secteur = fields.Many2one('cardiologieb.secteur')
     chambre = fields.Many2one('cardiologieb.chambre')
-    #gardes = fields.One2many('cardiologieb.garde','resident')
-    stats = fields.One2many('cardiologieb.stat','resident')
+    gardes = fields.One2many('cardiologieb.garde','resident')
+    note = fields.One2many('cardiologieb.note','resident')
+    promotion = fields.Many2one('cardiologieb.promotion')
 
     def _secteur_onchange(self):
           res = {}
@@ -26,6 +27,7 @@ class Resident(models.Model):
 
 class Secteur(models.Model):
     _name = 'cardiologieb.secteur'
+    _rec_name = 'nom'
 
     nom = fields.Char()
     chambres = fields.One2many('cardiologieb.chambre', 'secteur_id')
@@ -33,25 +35,40 @@ class Secteur(models.Model):
 
 class Chambre(models.Model):
     _name = 'cardiologieb.chambre'
+    _rec_name = 'nom'
 
     nom = fields.Char()
     secteur_id = fields.Many2one('cardiologieb.secteur')
-    responsable_id = fields.One2many('cardiologieb.resident','chambre')
+    responsable_id = fields.One2many('cardiologieb.resident', 'chambre')
 
 
 class Garde(models.Model):
     _name = 'cardiologieb.garde'
 
-    nom = fields.Char()
-    #date_garde = fields.Date()
+    date_garde = fields.Date()
     resident = fields.Many2one('cardiologieb.resident')
 
 
 class Stat(models.Model):
     _name = 'cardiologieb.stat'
+    _rec_name = 'nom'
 
     nom = fields.Char()
-    note = fields.Integer()
+
+
+class Note(models.Model):
+    _name = 'cardiologieb.note'
+
+    stat = fields.Many2one('cardiologieb.stat')
     resident = fields.Many2one('cardiologieb.resident')
+    note_resident = fields.Integer(0)
+
+
+class Promotion(models.Model):
+    _name = 'cardiologieb.promotion'
+    _rec_name = 'nom'
+
+    nom = fields.Char()
+
 
 

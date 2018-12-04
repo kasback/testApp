@@ -4,3 +4,5 @@ access_cardiologieb_secteur,cardiologieb.secteur,model_cardiologieb_secteur,,1,1
 access_cardiologieb_chambre,cardiologieb.chambre,model_cardiologieb_chambre,,1,1,1,1
 access_cardiologieb_garde,cardiologieb.garde,model_cardiologieb_garde,,1,1,1,1
 access_cardiologieb_stat,cardiologieb.stat,model_cardiologieb_stat,,1,1,1,1
+access_cardiologieb_promotion,cardiologieb.promotion,model_cardiologieb_promotion,,1,1,1,1
+access_cardiologieb_note,cardiologieb.note,model_cardiologieb_note,,1,1,1,1
