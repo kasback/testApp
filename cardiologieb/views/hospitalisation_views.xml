@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="cardiologieb.hospitalisation">
+            <field name="name">Hospitalisation</field>
+            <field name="model">cardiologieb.hospitalisation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="malade"/>
+                    <field name="secteur"/>
+                    <field name="chambre"/>
+                    <field name="date_entree"/>
+                    <field name="lit"/>
+                    <field name="ds"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="v">
+            <field name="name">Hospi form</field>
+            <field name="model">cardiologieb.hospitalisation</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <form string="Hospitalisation">
+                    <group col="2">
+                        <group>
+                            <field name="malade"/>
+                            <field name="secteur"/>
+                        </group>
+                        <group>
+                            <field name="chambre"/>
+                            <field name="lit"/>
+                            <field name="date_entree"/>
+                        </group>
+                    </group>
+                    <button attrs="{'invisible':[('id', '==', False)]}" class="oe_highlight" string="Faire Sortir" name="sortir_malade" type="object"/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cardiologieb.action_hospitalisation">
+            <field name="name">Hospitalisations</field>
+            <field name="res_model">cardiologieb.hospitalisation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

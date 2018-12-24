@@ -1,0 +1,72 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="cardiologieb.compterendu">
+      <field name="name">Compte Rendus</field>
+      <field name="model">cardiologieb.compterendu</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="titre"/>
+          <field name="fdr_c_vx"/>
+          <field name="antecedents"/>
+            <field name="examin_general"/>
+            <field name="examin_cv"/>
+            <field name="examin_pp"/>
+            <field name="examin_abdo"/>
+            <field name="examin_loge"/>
+            <field name="ecg"/>
+            <field name="biologie"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cardiologieb.action_compterendu">
+      <field name="name">Compte Rendus</field>
+      <field name="res_model">cardiologieb.compterendu</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+
+  <data>
+
+    <record model="ir.ui.view" id="cardiologieb.biologie">
+      <field name="name">Biologies</field>
+      <field name="model">cardiologieb.biologie</field>
+      <field name="arch" type="xml">
+          <tree>
+                <field name="nom"/>
+          </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cardiologieb.action_biologie">
+      <field name="name">Biologies</field>
+      <field name="res_model">cardiologieb.biologie</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+
+    <data>
+
+    <record model="ir.ui.view" id="cardiologieb.biologie_note">
+      <field name="name">Biologies Notes</field>
+      <field name="model">cardiologieb.biologie_note</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="biologie"/>
+              <field name="note"/>
+          </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cardiologieb.action_biologie_note">
+      <field name="name">Biologies Notes</field>
+      <field name="res_model">cardiologieb.biologie_note</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+
+</odoo>

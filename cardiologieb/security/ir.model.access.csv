@@ -6,3 +6,12 @@ access_cardiologieb_garde,cardiologieb.garde,model_cardiologieb_garde,,1,1,1,1
 access_cardiologieb_stat,cardiologieb.stat,model_cardiologieb_stat,,1,1,1,1
 access_cardiologieb_promotion,cardiologieb.promotion,model_cardiologieb_promotion,,1,1,1,1
 access_cardiologieb_note,cardiologieb.note,model_cardiologieb_note,,1,1,1,1
+access_cardiologieb_ville,cardiologieb.ville,model_cardiologieb_ville,,1,1,1,1
+access_cardiologieb_region,cardiologieb.region,model_cardiologieb_region,,1,1,1,1
+access_cardiologieb_malade,cardiologieb.malade,model_cardiologieb_malade,,1,1,1,1
+access_cardiologieb_hospitalisation,cardiologieb.hospitalisation,model_cardiologieb_hospitalisation,,1,1,1,1
+access_cardiologieb_lit,cardiologieb.lit,model_cardiologieb_lit,,1,1,1,1
+access_cardiologieb_diagnostic,cardiologieb.diagnostic,model_cardiologieb_diagnostic,,1,1,1,1
+access_cardiologieb_compterendu,cardiologieb.compterendu,model_cardiologieb_compterendu,,1,1,1,1
+access_cardiologieb_biologie,cardiologieb.biologie,model_cardiologieb_biologie,,1,1,1,1
+access_cardiologieb_biologie_note,cardiologieb.biologie_note,model_cardiologieb_biologie_note,,1,1,1,1

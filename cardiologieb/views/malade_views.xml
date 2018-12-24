@@ -1,0 +1,28 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="cardiologieb.malade">
+      <field name="name">Malade</field>
+      <field name="model">cardiologieb.malade</field>
+      <field name="arch" type="xml">
+          <tree>
+                <field name="nom"/>
+                <field name="prenom"/>
+                <field name="telephone"/>
+                <field name="numEntree"/>
+                <field name="region"/>
+                <field name="ville"/>
+                <field name="age"/>
+                <field name="pec"/>
+          </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cardiologieb.action_malade">
+      <field name="name">Patients</field>
+      <field name="res_model">cardiologieb.malade</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

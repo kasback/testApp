@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class Cardiologieb(models.Model):
@@ -15,31 +15,23 @@ class Resident(models.Model):
     prenom = fields.Char()
     secteur = fields.Many2one('cardiologieb.secteur')
     chambre = fields.Many2one('cardiologieb.chambre')
-    gardes = fields.One2many('cardiologieb.garde','resident')
-    note = fields.One2many('cardiologieb.note','resident')
     promotion = fields.Many2one('cardiologieb.promotion')
+    ville = fields.Many2one('cardiologieb.ville')
+    region = fields.Many2one('cardiologieb.region')
+    gardes = fields.One2many('cardiologieb.garde', 'resident')
+    note = fields.One2many('cardiologieb.note', 'resident')
 
+    @api.onchange('secteur')
     def _secteur_onchange(self):
           res = {}
           res['domain'] = {'chambre': [('secteur_id', '=', self.secteur.id)]}
           return res
 
-
-class Secteur(models.Model):
-    _name = 'cardiologieb.secteur'
-    _rec_name = 'nom'
-
-    nom = fields.Char()
-    chambres = fields.One2many('cardiologieb.chambre', 'secteur_id')
-
-
-class Chambre(models.Model):
-    _name = 'cardiologieb.chambre'
-    _rec_name = 'nom'
-
-    nom = fields.Char()
-    secteur_id = fields.Many2one('cardiologieb.secteur')
-    responsable_id = fields.One2many('cardiologieb.resident', 'chambre')
+    @api.onchange('region')
+    def _region_onchange(self):
+        res = {}
+        res['domain'] = {'ville': [('region', '=', self.region.id)]}
+        return res
 
 
 class Garde(models.Model):

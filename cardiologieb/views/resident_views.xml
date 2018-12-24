@@ -11,6 +11,8 @@
           <field name="secteur"/>
           <field name="chambre"/>
           <field name="promotion"/>
+          <field name="region"/>
+          <field name="ville"/>
         </tree>
       </field>
     </record>
@@ -27,6 +29,10 @@
         <menuitem name="Secteurs" id="cardiologieb.menu_2" parent="cardiologieb.menu_root" action="cardiologieb.action_secteur"/>
         <menuitem name="Chambres" id="cardiologieb.menu_3" parent="cardiologieb.menu_root" action="cardiologieb.action_chambre"/>
         <menuitem name="Gardes" id="cardiologieb.menu_4" parent="cardiologieb.menu_root" action="cardiologieb.action_garde"/>
-        <menuitem name="Stat" id="cardiologieb.menu_5" parent="cardiologieb.menu_root" action="cardiologieb.action_stat"/>
+        <menuitem name="Patients" id="cardiologieb.menu_5" parent="cardiologieb.menu_root" action="cardiologieb.action_malade"/>
+        <menuitem name="Hospitalisations" id="cardiologieb.menu_6" parent="cardiologieb.menu_root" action="cardiologieb.action_hospitalisation"/>
+        <menuitem name="Diagnostics" id="cardiologieb.menu_7" parent="cardiologieb.menu_root" action="cardiologieb.action_diagnostic"/>
+        <menuitem name="Compte Rendus" id="cardiologieb.menu_8" parent="cardiologieb.menu_root" action="cardiologieb.action_compterendu"/>
+        <menuitem name="Biologies" id="cardiologieb.menu_9" parent="cardiologieb.menu_root" action="cardiologieb.action_biologie_note"/>
   </data>
 </odoo>
