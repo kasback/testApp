@@ -6,16 +6,12 @@
       <field name="model">cardiologieb.compterendu</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="titre"/>
-          <field name="fdr_c_vx"/>
-          <field name="antecedents"/>
-            <field name="examin_general"/>
-            <field name="examin_cv"/>
-            <field name="examin_pp"/>
-            <field name="examin_abdo"/>
-            <field name="examin_loge"/>
-            <field name="ecg"/>
+            <field name="titre"/>
             <field name="biologie"/>
+            <field name="malade" />
+            <field name="create_uid"/>
+            <field name="create_date"/>
+            <field name="__last_update"/>
         </tree>
       </field>
     </record>
@@ -56,8 +52,27 @@
       <field name="arch" type="xml">
           <tree>
               <field name="biologie"/>
-              <field name="note"/>
+              <field name="valeur"/>
+              <field name="compte_rendu" invisible="1"/>
           </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="cardiologieb.biologie_note_form">
+      <field name="name">Biologies Notes</field>
+      <field name="model">cardiologieb.biologie_note</field>
+      <field name="arch" type="xml">
+          <form string="Biologie">
+            <group cols="2">
+              <group>
+                <field name="biologie"/>
+              </group>
+              <group>
+                <field name="valeur"/>
+              </group>
+              <field name="compte_rendu" invisible="1"/>
+            </group>
+          </form>
       </field>
     </record>
 

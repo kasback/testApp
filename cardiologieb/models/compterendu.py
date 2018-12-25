@@ -16,6 +16,10 @@ class CompteRendu(models.Model):
     examin_loge = fields.Html(string="Examin de la loge thyroidienne")
     ecg = fields.Html(string="ECG")
     biologie = fields.One2many('cardiologieb.biologie_note', 'compte_rendu', string="Biologie")
+    malade = fields.Many2one('cardiologieb.malade')
+    create_uid = fields.Many2one('res.users')
+    create_date = fields.Datetime('Date')
+    prescriptions = fields.Many2many('cardiologieb.prescription')
 
 
 class Biologie(models.Model):
@@ -29,7 +33,7 @@ class BiologieNote(models.Model):
     _name = "cardiologieb.biologie_note"
 
     biologie = fields.Many2one('cardiologieb.biologie')
-    note = fields.Integer(0)
+    valeur = fields.Integer(0)
     compte_rendu = fields.Many2one('cardiologieb.compterendu')
 
 
@@ -42,5 +46,6 @@ class Prescription(models.Model):
     forme_pharmaceutique = fields.Char()
     voies_dadministration = fields.Char()
     titulaires = fields.Char()
+    compte_rendu = fields.Many2many('cardiologieb.compterendu')
 
 
