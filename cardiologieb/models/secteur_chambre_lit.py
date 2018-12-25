@@ -24,4 +24,3 @@ class Lit(models.Model):
 
     nom = fields.Char()
     chambre = fields.Many2one('cardiologieb.chambre')
-    occupe = fields.Boolean()

@@ -16,6 +16,63 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="cardiologieb.compterendu_form">
+      <field name="name">Compte Rendus</field>
+      <field name="model">cardiologieb.compterendu</field>
+      <field name="arch" type="xml">
+        <form string="Compte rendu">
+            <group cols="2">
+                <group>
+                    <field name="malade" />
+                    <field name="titre"/>
+                </group>
+                <group>
+                    <field name="create_uid" attrs="{'invisible':[('id', '==', False)]}"/>
+                    <field name="create_date" attrs="{'invisible':[('id', '==', False)]}"/>
+                    <field name="__last_update" attrs="{'invisible':[('id', '==', False)]}"/>
+                </group>
+            </group>
+            <notebook>
+                <page string="Examins">
+                    <group cols="2">
+                        <group>
+                            <field name="examin_general"/>
+                            <field name="examin_cv"/>
+                            <field name="examin_pp" />
+                        </group>
+                        <group>
+                            <field name="examin_abdo"/>
+                            <field name="examin_loge"/>
+                            <field name="ecg" />
+                        </group>
+                    </group>
+                </page>
+                <page string="Antécédents et histoire">
+                    <group cols="2">
+                        <group>
+                            <field name="antecedents"/>
+                        </group>
+                        <group>
+                            <field name="histoire"/>
+                        </group>
+                    </group>
+                </page>
+                <page string="Biologie et prescriptions">
+                    <group cols="2">
+                        <group>
+                            <field name="biologie"/>
+                        </group>
+                        <group>
+                            <field name="prescriptions"/>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </form>
+      </field>
+    </record>
+
+
     <record model="ir.actions.act_window" id="cardiologieb.action_compterendu">
       <field name="name">Compte Rendus</field>
       <field name="res_model">cardiologieb.compterendu</field>

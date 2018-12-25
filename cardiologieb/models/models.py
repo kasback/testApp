@@ -40,6 +40,7 @@ class Garde(models.Model):
 
     date_garde = fields.Date()
     resident = fields.Many2one('cardiologieb.resident')
+    fromMainView = fields.Boolean(compute="_from_main_view", store=False)
 
 
 class Stat(models.Model):
