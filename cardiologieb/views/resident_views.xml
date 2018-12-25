@@ -33,6 +33,6 @@
         <menuitem name="Hospitalisations" id="cardiologieb.menu_6" parent="cardiologieb.menu_root" action="cardiologieb.action_hospitalisation"/>
         <menuitem name="Diagnostics" id="cardiologieb.menu_7" parent="cardiologieb.menu_root" action="cardiologieb.action_diagnostic"/>
         <menuitem name="Compte Rendus" id="cardiologieb.menu_8" parent="cardiologieb.menu_root" action="cardiologieb.action_compterendu"/>
-        <menuitem name="Biologies" id="cardiologieb.menu_9" parent="cardiologieb.menu_root" action="cardiologieb.action_biologie_note"/>
+        <menuitem name="Médicaments" id="cardiologieb.menu_9" parent="cardiologieb.menu_root" action="cardiologieb.action_prescription"/>
   </data>
 </odoo>

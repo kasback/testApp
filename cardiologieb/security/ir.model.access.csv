@@ -15,3 +15,4 @@ access_cardiologieb_diagnostic,cardiologieb.diagnostic,model_cardiologieb_diagno
 access_cardiologieb_compterendu,cardiologieb.compterendu,model_cardiologieb_compterendu,,1,1,1,1
 access_cardiologieb_biologie,cardiologieb.biologie,model_cardiologieb_biologie,,1,1,1,1
 access_cardiologieb_biologie_note,cardiologieb.biologie_note,model_cardiologieb_biologie_note,,1,1,1,1
+access_cardiologieb_prescription,cardiologieb.prescription,model_cardiologieb_prescription,,1,1,1,1

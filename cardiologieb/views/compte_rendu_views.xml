@@ -48,7 +48,7 @@
 
   </data>
 
-    <data>
+  <data>
 
     <record model="ir.ui.view" id="cardiologieb.biologie_note">
       <field name="name">Biologies Notes</field>
@@ -64,6 +64,30 @@
     <record model="ir.actions.act_window" id="cardiologieb.action_biologie_note">
       <field name="name">Biologies Notes</field>
       <field name="res_model">cardiologieb.biologie_note</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+
+  <data>
+
+    <record model="ir.ui.view" id="cardiologieb.prescription">
+      <field name="name">Prescriptions</field>
+      <field name="model">cardiologieb.prescription</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="nom"/>
+              <field name="code_cis" string="Code CIS"/>
+              <field name="forme_pharmaceutique" string="Forme pharmaceutique"/>
+              <field name="voies_dadministration" string="Voies d'administration"/>
+              <field name="titulaires" string="Titulaires"/>
+          </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cardiologieb.action_prescription">
+      <field name="name">Prescriptions</field>
+      <field name="res_model">cardiologieb.prescription</field>
       <field name="view_mode">tree,form</field>
     </record>
 

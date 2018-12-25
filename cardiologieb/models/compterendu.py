@@ -33,4 +33,14 @@ class BiologieNote(models.Model):
     compte_rendu = fields.Many2one('cardiologieb.compterendu')
 
 
+class Prescription(models.Model):
+    _name = "cardiologieb.prescription"
+    _rec_name = 'nom'
+
+    nom = fields.Char()
+    code_cis = fields.Char()
+    forme_pharmaceutique = fields.Char()
+    voies_dadministration = fields.Char()
+    titulaires = fields.Char()
+
 
