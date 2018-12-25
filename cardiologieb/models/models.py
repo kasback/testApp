@@ -16,8 +16,9 @@ class Resident(models.Model):
     secteur = fields.Many2one('cardiologieb.secteur')
     chambre = fields.Many2one('cardiologieb.chambre')
     promotion = fields.Many2one('cardiologieb.promotion')
-    ville = fields.Many2one('cardiologieb.ville')
-    region = fields.Many2one('cardiologieb.region')
+    email = fields.Char(string="Adresse email")
+    sexe = fields.Selection([('H', 'Homme'), ('F', 'Femme')])
+    telephone = fields.Char(string="Téléphone")
     gardes = fields.One2many('cardiologieb.garde', 'resident')
     note = fields.One2many('cardiologieb.note', 'resident')
 

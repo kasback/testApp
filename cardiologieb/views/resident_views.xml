@@ -11,8 +11,9 @@
           <field name="secteur"/>
           <field name="chambre"/>
           <field name="promotion"/>
-          <field name="region"/>
-          <field name="ville"/>
+          <field name="email"/>
+          <field name="sexe"/>
+          <field name="telephone"/>
         </tree>
       </field>
     </record>
