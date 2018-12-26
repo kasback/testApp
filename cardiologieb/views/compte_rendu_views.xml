@@ -1,168 +1,196 @@
 <odoo>
-  <data>
+    <data>
 
-    <record model="ir.ui.view" id="cardiologieb.compterendu">
-      <field name="name">Compte Rendus</field>
-      <field name="model">cardiologieb.compterendu</field>
-      <field name="arch" type="xml">
-        <tree>
-            <field name="titre"/>
-            <field name="biologie"/>
-            <field name="malade" />
-            <field name="create_uid"/>
-            <field name="create_date"/>
-            <field name="__last_update"/>
-        </tree>
-      </field>
-    </record>
-
-    <record model="ir.ui.view" id="cardiologieb.compterendu_form">
-      <field name="name">Compte Rendus</field>
-      <field name="model">cardiologieb.compterendu</field>
-      <field name="arch" type="xml">
-        <form string="Compte rendu">
-            <group cols="2">
-                <group>
-                    <field name="malade" />
+        <record model="ir.ui.view" id="cardiologieb.compterendu">
+            <field name="name">Compte Rendus</field>
+            <field name="model">cardiologieb.compterendu</field>
+            <field name="arch" type="xml">
+                <tree>
                     <field name="titre"/>
-                </group>
-                <group>
-                    <field name="create_uid" attrs="{'invisible':[('id', '==', False)]}"/>
-                    <field name="create_date" attrs="{'invisible':[('id', '==', False)]}"/>
-                    <field name="__last_update" attrs="{'invisible':[('id', '==', False)]}"/>
-                </group>
-            </group>
-            <notebook>
-                <page string="Examins">
+                    <field name="biologie"/>
+                    <field name="malade"/>
+                    <field string="Auteur" name="create_uid"/>
+                    <field string="Écrit le" name="create_date"/>
+                    <field string="Modifié le" name="__last_update"/>
+                    <field string="Etat" name="etat"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cardiologieb.compterendu_form">
+            <field name="name">Compte Rendus</field>
+            <field name="model">cardiologieb.compterendu</field>
+            <field name="arch" type="xml">
+                <form string="Compte rendu">
+                    <header>
+                            <button string="Brouillon" type="object" name="draft_progressbar" attrs="{'invisible': ['|' , ('etat', '=', 'draft') ,('etat', '=', 'valide')]}"/>
+                            <button string="À valider" type="object" name="validation_progressbar"  attrs="{'invisible': ['|' , ('etat', '!=', 'draft') ,('etat', '=', 'valide')]}"/>
+                            <button string="Valider" type="object" name="valide_progressbar" attrs="{'invisible': ['|' , ('etat', '!=', 'validation') ,('etat', '=', 'valide')]}"/>
+                            <field name="etat"  widget="statusbar" clickable="0"/>
+                    </header>
                     <group cols="2">
                         <group>
-                            <field name="examin_general"/>
-                            <field name="examin_cv"/>
-                            <field name="examin_pp" />
+                            <field name="malade" attrs="{'readonly':[('etat','=','valide')]}"/>
+                            <field name="titre" attrs="{'readonly':[('etat','=','valide')]}"/>
+                            <field name="attachement" widget="many2many_binary" attrs="{'readonly':[('etat','=','valide')]}"/>
                         </group>
                         <group>
-                            <field name="examin_abdo"/>
-                            <field name="examin_loge"/>
-                            <field name="ecg" />
+                            <field string="Auteur" name="create_uid" attrs="{'invisible':[('id', '==', False)],'readonly':[('etat','=','valide')]}"/>
+                            <field string="Écrit le" name="create_date" attrs="{'invisible':[('id', '==', False)] , 'readonly':[('etat','=','valide')]}"/>
+                            <field string="Modifié le" name="__last_update" attrs="{'invisible':[('id', '==', False)] , 'readonly':[('etat','=','valide')]}"/>
                         </group>
                     </group>
-                </page>
-                <page string="Antécédents et histoire">
-                    <group cols="2">
-                        <group>
-                            <field name="antecedents"/>
-                        </group>
-                        <group>
-                            <field name="histoire"/>
-                        </group>
-                    </group>
-                </page>
-                <page string="Biologie et prescriptions">
+                    <notebook>
+                        <page string="Examins">
+                            <group cols="2">
+                                <group>
+                                    <field name="examin_general" attrs="{'readonly':[('etat','=','valide')]}"/>
+                                    <field name="examin_cv" attrs="{'readonly':[('etat','=','valide')]}"/>
+                                    <field name="examin_pp" attrs="{'readonly':[('etat','=','valide')]}"/>
+                                </group>
+                                <group>
+                                    <field name="examin_abdo" attrs="{'readonly':[('etat','=','valide')]}"/>
+                                    <field name="examin_loge" attrs="{'readonly':[('etat','=','valide')]}"/>
+                                    <field name="ecg" attrs="{'readonly':[('etat','=','valide')]}"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Antécédents et histoire">
+                            <group cols="2">
+                                <group>
+                                    <field name="antecedents" attrs="{'readonly':[('etat','=','valide')]}"/>
+                                </group>
+                                <group>
+                                    <field name="histoire" attrs="{'readonly':[('etat','=','valide')]}" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Biologie et prescriptions">
+                            <group cols="2">
+                                <group>
+                                    <field name="biologie" attrs="{'readonly':[('etat','=','valide')]}"/>
+                                    <field name="conclusion" attrs="{'readonly':[('etat','=','valide')]}"/>
+                                </group>
+                                <group>
+                                    <field name="prescriptions" attrs="{'readonly':[('etat','=','valide')]}"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="cardiologieb.action_compterendu">
+            <field name="name">Compte Rendus</field>
+            <field name="res_model">cardiologieb.compterendu</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+
+    <data>
+
+        <record model="ir.ui.view" id="cardiologieb.biologie">
+            <field name="name">Biologies</field>
+            <field name="model">cardiologieb.biologie</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nom"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cardiologieb.action_biologie">
+            <field name="name">Biologies</field>
+            <field name="res_model">cardiologieb.biologie</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+
+    <data>
+
+        <record model="ir.ui.view" id="cardiologieb.biologie_note">
+            <field name="name">Biologies Notes</field>
+            <field name="model">cardiologieb.biologie_note</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="biologie"/>
+                    <field name="valeur"/>
+                    <field name="compte_rendu" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cardiologieb.biologie_note_form">
+            <field name="name">Biologies Notes</field>
+            <field name="model">cardiologieb.biologie_note</field>
+            <field name="arch" type="xml">
+                <form string="Biologie">
                     <group cols="2">
                         <group>
                             <field name="biologie"/>
                         </group>
                         <group>
-                            <field name="prescriptions"/>
+                            <field name="valeur"/>
                         </group>
+                        <field name="compte_rendu" invisible="1"/>
                     </group>
-                </page>
-            </notebook>
-        </form>
-      </field>
-    </record>
+                </form>
+            </field>
+        </record>
 
+        <record model="ir.actions.act_window" id="cardiologieb.action_biologie_note">
+            <field name="name">Biologies Notes</field>
+            <field name="res_model">cardiologieb.biologie_note</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
-    <record model="ir.actions.act_window" id="cardiologieb.action_compterendu">
-      <field name="name">Compte Rendus</field>
-      <field name="res_model">cardiologieb.compterendu</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+    </data>
 
-  </data>
+    <data>
 
-  <data>
+        <record model="ir.ui.view" id="cardiologieb.prescription">
+            <field name="name">Prescriptions</field>
+            <field name="model">cardiologieb.prescription</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nom"/>
+                    <field name="code_cis" string="Code CIS"/>
+                    <field name="forme_pharmaceutique" string="Forme pharmaceutique"/>
+                    <field name="voies_dadministration" string="Voies d'administration"/>
+                    <field name="titulaires" string="Titulaires"/>
+                </tree>
+            </field>
+        </record>
 
-    <record model="ir.ui.view" id="cardiologieb.biologie">
-      <field name="name">Biologies</field>
-      <field name="model">cardiologieb.biologie</field>
-      <field name="arch" type="xml">
-          <tree>
-                <field name="nom"/>
-          </tree>
-      </field>
-    </record>
+        <record model="ir.actions.act_window" id="cardiologieb.action_prescription">
+            <field name="name">Prescriptions</field>
+            <field name="res_model">cardiologieb.prescription</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
-    <record model="ir.actions.act_window" id="cardiologieb.action_biologie">
-      <field name="name">Biologies</field>
-      <field name="res_model">cardiologieb.biologie</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+    </data>
+    <data>
 
-  </data>
+        <record model="ir.ui.view" id="cardiologieb.biologie">
+            <field name="name">Biologies</field>
+            <field name="model">cardiologieb.biologie</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nom"/>
+                </tree>
+            </field>
+        </record>
 
-  <data>
+        <record model="ir.actions.act_window" id="cardiologieb.action_biologie">
+            <field name="name">Biologies</field>
+            <field name="res_model">cardiologieb.biologie</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
-    <record model="ir.ui.view" id="cardiologieb.biologie_note">
-      <field name="name">Biologies Notes</field>
-      <field name="model">cardiologieb.biologie_note</field>
-      <field name="arch" type="xml">
-          <tree>
-              <field name="biologie"/>
-              <field name="valeur"/>
-              <field name="compte_rendu" invisible="1"/>
-          </tree>
-      </field>
-    </record>
-
-    <record model="ir.ui.view" id="cardiologieb.biologie_note_form">
-      <field name="name">Biologies Notes</field>
-      <field name="model">cardiologieb.biologie_note</field>
-      <field name="arch" type="xml">
-          <form string="Biologie">
-            <group cols="2">
-              <group>
-                <field name="biologie"/>
-              </group>
-              <group>
-                <field name="valeur"/>
-              </group>
-              <field name="compte_rendu" invisible="1"/>
-            </group>
-          </form>
-      </field>
-    </record>
-
-    <record model="ir.actions.act_window" id="cardiologieb.action_biologie_note">
-      <field name="name">Biologies Notes</field>
-      <field name="res_model">cardiologieb.biologie_note</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-  </data>
-
-  <data>
-
-    <record model="ir.ui.view" id="cardiologieb.prescription">
-      <field name="name">Prescriptions</field>
-      <field name="model">cardiologieb.prescription</field>
-      <field name="arch" type="xml">
-          <tree>
-              <field name="nom"/>
-              <field name="code_cis" string="Code CIS"/>
-              <field name="forme_pharmaceutique" string="Forme pharmaceutique"/>
-              <field name="voies_dadministration" string="Voies d'administration"/>
-              <field name="titulaires" string="Titulaires"/>
-          </tree>
-      </field>
-    </record>
-
-    <record model="ir.actions.act_window" id="cardiologieb.action_prescription">
-      <field name="name">Prescriptions</field>
-      <field name="res_model">cardiologieb.prescription</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-  </data>
+    </data>
 
 </odoo>

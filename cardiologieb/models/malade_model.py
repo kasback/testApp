@@ -12,12 +12,13 @@ class Malade(models.Model):
     prenom = fields.Char()
     telephone = fields.Char()
     numEntree = fields.Char()
+    pec = fields.Selection([('ramed', 'RAMED'), ('cnss', 'CNSS')])
     region = fields.Many2one('cardiologieb.region')
     ville = fields.Many2one('cardiologieb.ville')
     date_naissance = fields.Date()
     age = fields.Char(compute='_calcul_age', default="0", store=True)
     diagnostic = fields.Many2many('cardiologieb.diagnostic')
-    pec = fields.Selection([('ramed', 'RAMED'), ('cnss', 'CNSS')])
+    compte_rendus = fields.One2many('cardiologieb.compterendu', 'malade')
 
     def _check_lit(self):
         for malade in self:

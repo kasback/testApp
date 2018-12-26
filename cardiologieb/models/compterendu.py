@@ -14,12 +14,39 @@ class CompteRendu(models.Model):
     examin_pp = fields.Html(string="Examin Pleuro-pulmonaire")
     examin_abdo = fields.Html(string="Examin abdominal")
     examin_loge = fields.Html(string="Examin de la loge thyroidienne")
+    conclusion = fields.Html(string="Conclusion")
     ecg = fields.Html(string="ECG")
     biologie = fields.One2many('cardiologieb.biologie_note', 'compte_rendu', string="Biologie")
     malade = fields.Many2one('cardiologieb.malade')
     create_uid = fields.Many2one('res.users')
     create_date = fields.Datetime('Date')
     prescriptions = fields.Many2many('cardiologieb.prescription')
+    attachement = fields.Many2many('ir.attachment', string="Pièce jointe")
+    etat = fields.Selection([
+        ('draft', 'Brouillon'),
+        ('validation', 'Validation'),
+        ('valide', 'Validé'),
+    ], default='draft')
+
+    @api.one
+    def draft_progressbar(self):
+        self.write({
+            'etat': 'draft',
+        })
+
+    # This function is triggered when the user clicks on the button 'Set to started'
+    @api.one
+    def validation_progressbar(self):
+        self.write({
+            'etat': 'validation'
+        })
+
+    # This function is triggered when the user clicks on the button 'In progress'
+    @api.one
+    def valide_progressbar(self):
+        self.write({
+            'etat': 'valide'
+        })
 
 
 class Biologie(models.Model):
