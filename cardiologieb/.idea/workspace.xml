@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0f5a46c-3b00-4476-ac49-2596e4e630e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/models/compterendu.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/compterendu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/malade_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/malade_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/compte_rendu_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/compte_rendu_views.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/resident_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/resident_views.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e0f5a46c-3b00-4476-ac49-2596e4e630e2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +13,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/compte_rendu_views.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
+            <state relative-caret-position="827">
               <caret line="48" column="106" lean-forward="true" selection-start-line="48" selection-start-column="106" selection-end-line="48" selection-end-column="106" />
             </state>
           </provider>
@@ -215,6 +210,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990099" weight="0.2022117" />
       <window_info id="Structure" order="1" sideWeight="0.5009901" side_tool="true" weight="0.24749868" />
@@ -227,7 +223,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32970297" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.44554454" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.44554454" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32871288" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -466,7 +462,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/compte_rendu_views.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
+        <state relative-caret-position="827">
           <caret line="48" column="106" lean-forward="true" selection-start-line="48" selection-start-column="106" selection-end-line="48" selection-end-column="106" />
         </state>
       </provider>

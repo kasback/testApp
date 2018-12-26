@@ -26,7 +26,7 @@
                             <button string="Brouillon" type="object" name="draft_progressbar" attrs="{'invisible': ['|' , ('etat', '=', 'draft') ,('etat', '=', 'valide')]}"/>
                             <button string="À valider" type="object" name="validation_progressbar"  attrs="{'invisible': ['|' , ('etat', '!=', 'draft') ,('etat', '=', 'valide')]}"/>
                             <button string="Valider" type="object" name="valide_progressbar" attrs="{'invisible': ['|' , ('etat', '!=', 'validation') ,('etat', '=', 'valide')]}"/>
-                            <field name="etat"  widget="statusbar" clickable="0"/>
+                            <field name="etat"  widget="statusbar" attrs="{'readonly':True}"/>
                     </header>
                     <group cols="2">
                         <group>
