@@ -20,7 +20,7 @@
           <form string="Notes">
               <group>
                 <field name="stat"/>
-                <field name="resident" attrs="{'invisible':[('id', '==', False)]}"/>
+                <field name="resident"/>
               </group>
               <group>
                   <field name="note_resident"/>

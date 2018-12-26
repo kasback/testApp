@@ -9,11 +9,11 @@
           <field name="nom"/>
           <field name="prenom"/>
           <field name="secteur"/>
-          <field name="chambre"/>
           <field name="promotion"/>
           <field name="email"/>
           <field name="sexe"/>
           <field name="telephone"/>
+          <field name="chambre"/>
         </tree>
       </field>
     </record>

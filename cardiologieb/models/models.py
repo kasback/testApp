@@ -13,12 +13,12 @@ class Resident(models.Model):
 
     nom = fields.Char()
     prenom = fields.Char()
-    secteur = fields.Many2one('cardiologieb.secteur')
-    chambre = fields.Many2one('cardiologieb.chambre')
-    promotion = fields.Many2one('cardiologieb.promotion')
-    email = fields.Char(string="Adresse email")
     sexe = fields.Selection([('H', 'Homme'), ('F', 'Femme')])
+    email = fields.Char(string="Adresse email")
     telephone = fields.Char(string="Téléphone")
+    promotion = fields.Many2one('cardiologieb.promotion')
+    secteur = fields.Many2one('cardiologieb.secteur')
+    chambre = fields.Many2many('cardiologieb.chambre')
     gardes = fields.One2many('cardiologieb.garde', 'resident')
     note = fields.One2many('cardiologieb.note', 'resident')
 
@@ -40,7 +40,6 @@ class Garde(models.Model):
 
     date_garde = fields.Date()
     resident = fields.Many2one('cardiologieb.resident')
-    fromMainView = fields.Boolean(compute="_from_main_view", store=False)
 
 
 class Stat(models.Model):

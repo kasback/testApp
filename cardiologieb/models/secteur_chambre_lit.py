@@ -15,8 +15,9 @@ class Chambre(models.Model):
 
     nom = fields.Char()
     secteur_id = fields.Many2one('cardiologieb.secteur')
-    responsable_id = fields.One2many('cardiologieb.resident', 'chambre')
+    responsable_id = fields.Many2many('cardiologieb.resident')
     lits = fields.One2many('cardiologieb.lit', 'chambre')
+
 
 class Lit(models.Model):
     _name = 'cardiologieb.lit'

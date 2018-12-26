@@ -19,7 +19,7 @@
         <form>
           <group>
             <field name="nom"/>
-            <field name="secteur_id" attrs="{'invisible':[('id', '==', False)]}"/>
+            <field name="secteur_id"/>
             <field name="lits"/>
           </group>
         </form>
