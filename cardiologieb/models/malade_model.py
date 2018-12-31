@@ -12,7 +12,7 @@ class Malade(models.Model):
     prenom = fields.Char()
     telephone = fields.Char()
     numEntree = fields.Char()
-    pec = fields.Selection([('ramed', 'RAMED'), ('cnss', 'CNSS')])
+    pec = fields.Selection([('ramed', 'RAMED'), ('cnss', 'CNSS'), ('cnops', 'CNOPS')])
     region = fields.Many2one('cardiologieb.region')
     ville = fields.Many2one('cardiologieb.ville')
     date_naissance = fields.Date()
@@ -51,4 +51,3 @@ class Diagnostic(models.Model):
 
     nom = fields.Char()
     malade = fields.Many2many('cardiologieb.malade')
-

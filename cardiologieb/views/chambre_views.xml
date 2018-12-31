@@ -8,6 +8,8 @@
         <tree>
           <field name="nom"/>
           <field name="secteur_id"/>
+          <field name="dms"/>
+          <field name="tmo"/>
         </tree>
       </field>
     </record>

@@ -11,6 +11,19 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="cardiologieb.diagnostic_form">
+      <field name="name">Diagnostics</field>
+      <field name="model">cardiologieb.diagnostic</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="nom"/>
+          <div attrs="{'invisible':[ ('id', '=', False) ]}">
+            <field name="malade" />
+          </div>
+        </form>
+      </field>
+    </record>
+
     <record model="ir.actions.act_window" id="cardiologieb.action_diagnostic">
       <field name="name">Diagnostics</field>
       <field name="res_model">cardiologieb.diagnostic</field>

@@ -1,6 +1,7 @@
 from odoo import fields, models, api
 from odoo.fields import Date
 
+
 class Hospitalisation(models.Model):
     _name = 'cardiologieb.hospitalisation'
     _rec_name = 'malade'

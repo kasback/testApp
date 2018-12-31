@@ -1,22 +1,50 @@
 <odoo>
-  <data>
+    <data>
 
-    <record model="ir.ui.view" id="cardiologieb.secteur">
-      <field name="name">Secteurs</field>
-      <field name="model">cardiologieb.secteur</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="nom"/>
-            <field name="chambres"/>
-        </tree>
-      </field>
-    </record>
+        <record model="ir.ui.view" id="cardiologieb.secteur">
+            <field name="name">Secteurs</field>
+            <field name="model">cardiologieb.secteur</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nom"/>
+                    <field name="chambres"/>
+                    <field name="dms"/>
+                    <field name="tmo"/>
+                </tree>
+            </field>
+        </record>
 
-    <record model="ir.actions.act_window" id="cardiologieb.action_secteur">
-      <field name="name">Secteurs</field>
-      <field name="res_model">cardiologieb.secteur</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+        <record model="ir.ui.view" id="cardiologieb.secteur_kanban">
+            <field name="name">Secteurs</field>
+            <field name="model">cardiologieb.secteur</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="nom"/>
+                    <field name="chambres"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card">
+                                <a type="open">
+                                    <field name="nom"/>
+                                </a>
+                                <p>
+                                    Durée moyenne de séjour : <field name="dms"/> jours
+                                </p>
+                                <p>
+                                    Taux moyen d'occupation : <field name="tmo"/> %
+                                </p>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
 
-  </data>
+        <record model="ir.actions.act_window" id="cardiologieb.action_secteur">
+            <field name="name">Secteurs</field>
+            <field name="res_model">cardiologieb.secteur</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+    </data>
 </odoo>
