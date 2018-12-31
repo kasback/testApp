@@ -1,35 +1,45 @@
 <odoo>
-  <data>
+    <data>
 
-    <record model="ir.ui.view" id="cardiologieb.garde">
-      <field name="name">Gardes</field>
-      <field name="model">cardiologieb.garde</field>
-      <field name="arch" type="xml">
-          <tree>
-                <field name="date_garde"/>
-                <field name="resident"/>
-          </tree>
-      </field>
-    </record>
+        <record model="ir.ui.view" id="cardiologieb.garde">
+            <field name="name">Gardes</field>
+            <field name="model">cardiologieb.garde</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date_garde"/>
+                    <field name="resident"/>
+                </tree>
+            </field>
+        </record>
 
-    <record model="ir.ui.view" id="cardiologieb.garde_form">
-      <field name="name">Gardes</field>
-      <field name="model">cardiologieb.garde</field>
-      <field name="arch" type="xml">
-          <form>
-              <group>
-                <field name="date_garde"/>
-                <field name="resident"/>
-              </group>
-          </form>
-      </field>
-    </record>
+        <record model="ir.ui.view" id="cardiologieb.garde_form">
+            <field name="name">Gardes</field>
+            <field name="model">cardiologieb.garde</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="date_garde"/>
+                        <field name="resident"/>
+                    </group>
+                </form>
+            </field>
+        </record>
 
-    <record model="ir.actions.act_window" id="cardiologieb.action_garde">
-      <field name="name">Gardes</field>
-      <field name="res_model">cardiologieb.garde</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+        <record model="ir.ui.view" id="cardiologieb.garde_calendar">
+            <field name="name">Gardes</field>
+            <field name="model">cardiologieb.garde</field>
+            <field name="arch" type="xml">
+                <calendar date_start="date_garde">
+                    <field name="resident"/>
+                </calendar>
+            </field>
+        </record>
 
-  </data>
+        <record model="ir.actions.act_window" id="cardiologieb.action_garde">
+            <field name="name">Gardes</field>
+            <field name="res_model">cardiologieb.garde</field>
+            <field name="view_mode">calendar,tree,form</field>
+        </record>
+
+    </data>
 </odoo>

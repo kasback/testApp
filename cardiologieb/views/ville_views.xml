@@ -1,22 +1,43 @@
 <odoo>
-  <data>
+    <data>
 
-    <record model="ir.ui.view" id="cardiologieb.ville">
-      <field name="name">Villes</field>
-      <field name="model">cardiologieb.ville</field>
-      <field name="arch" type="xml">
-          <tree>
-                <field name="nom"/>
-                <field name="region"/>
-          </tree>
-      </field>
-    </record>
+        <record model="ir.ui.view" id="cardiologieb.ville">
+            <field name="name">Villes</field>
+            <field name="model">cardiologieb.ville</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nom"/>
+                    <field name="region"/>
+                </tree>
+            </field>
+        </record>
 
-    <record model="ir.actions.act_window" id="cardiologieb.action_ville">
-      <field name="name">Villes</field>
-      <field name="res_model">cardiologieb.ville</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+        <record model="ir.actions.act_window" id="cardiologieb.action_ville">
+            <field name="name">Villes</field>
+            <field name="res_model">cardiologieb.ville</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
-  </data>
+    </data>
+
+    <data>
+
+        <record model="ir.ui.view" id="cardiologieb.region">
+            <field name="name">Régions</field>
+            <field name="model">cardiologieb.region</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nom"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cardiologieb.action_region">
+            <field name="name">Régions</field>
+            <field name="res_model">cardiologieb.region</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+
 </odoo>
