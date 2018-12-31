@@ -9,7 +9,9 @@
                 <field name="nom"/>
                 <field name="prenom"/>
                 <field name="telephone"/>
+                <field name="cin"/>
                 <field name="numEntree"/>
+                <field name="sexe"/>
                 <field name="region"/>
                 <field name="ville"/>
                 <field name="age"/>
