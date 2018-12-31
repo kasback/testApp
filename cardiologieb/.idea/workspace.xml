@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0f5a46c-3b00-4476-ac49-2596e4e630e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/models/malade_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/malade_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/malade_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/malade_views.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e0f5a46c-3b00-4476-ac49-2596e4e630e2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
